@@ -110,7 +110,7 @@
         this.xModalStart = 0.53;
         this.yModalStart = 0.8;
         this.$modal.show('foo');
-        TweenMax.to('#myModal', 1, {scale: 2, yPercent:"-30%"});
+        TweenMax.to('#modal-button', 1, {scale: 2, yPercent:"-30%"});
         //TweenMax.to('#dialog', 3, {scale: 2,yPercent:"30%", xPercent:"2%", rotation:3*360, onComplete:closeModal(this)});
 
 

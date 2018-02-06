@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<!-- Button trigger modal -->
-		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" @click="spin()">
+		<button id="modal-button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" @click="spin()">
 		Launch demo modal
 		</button>
 		<!-- Modal -->
@@ -25,7 +25,7 @@
 				if(this.isSpinning == false) {
 
 					CSSPlugin.useSVGTransformAttr = true;
-					TweenMax.to('#modal_svg', 5, {x: 0, y: 0});
+					//TweenMax.to('#modal-button', 5, {x: 0, y: 0});
 
 					// TweenMax.to('#myModal', 10, { rotation: "+=360", repeat:-1, ease: Linear.easeNone, transformOrigin:"50% 50%" });
 					
