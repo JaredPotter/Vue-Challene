@@ -30,148 +30,64 @@
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
           class="button--grey">GitHub</a>
-            <div>
-    <modal name="foo" id="myModal" :width="30" :height="14" :pivotX="xModalStart" :pivotY="yModalStart">
-      Woot
-    </modal>
-    <p>Hi from <b>{{ name }}</b>.</p>
-    <button @click="$modal.show('foo')">
-      Open modal
-    </button>
-    <button id="animateID" @click="openModal">
-      Animate
-    </button>
-  </div>
+        <div>
+
+          <p>Hi from <b>{{ name }}</b>.</p>
+   <!--        <button @click="$modal.show('foo')">
+            Open modal
+          </button>
+          <button id="animateID" @click="openModal">
+            Animate -->
+          </button>
+          <div>
+            <svg>
+              <rect id="svgRectangle" class="animated" x="20" y="60" width="100" height="20" fill="#91e600" data-svg-origin="50 10"></rect>
+            </svg>
+          </div>
+        </div>
       </div>
-      <!-- <modal name="Hello, Gary.">Hello, Gary!</modal> -->
-      <!-- <modal name="Hello, Gary.">Hello, Gary!</modal> -->
+          <modal name="foo" :draggable="true" :width="modalWidth" :height="modalHeight" :pivotX="xModalStart" :pivotY="yModalStart">{{ modalText }}</modal>
     </div>
+
   </section>
 </template>
 
 <script>
   import AppLogo from '~/components/AppLogo.vue';
-  //import Modal from '~/components/Modal.vue';
+  import Modal from '~/components/Modal.vue';
   import Tabs from '~/components/Tabs.vue';
   import Tab from '~/components/Tab.vue';
   import About from '~/pages/about.vue';
   import Contact from '~/pages/contact.vue';
   import { TweenMax, TimelineMax, Power0 } from 'gsap';
-  import VModal from 'vue-js-modal/dist/ssr.index';
-
-  //Vue.use(VModal, { dialog: true});
-  // this.$modal.show('dialog', {
-  //   title: 'Alert!',
-  //   text: 'You are too awesome',
-  //   buttons: [
-  //     { 
-  //       title: 'Deal with it',
-  //       handler: () => { alert('Woot!') }
-  //     },
-  //     {
-  //       title: '',       // Button title
-  //       default: true,    // Will be triggered by default if 'Enter' pressed.
-  //       handler: () => {} // Button click handler
-  //     },
-  //     { 
-  //       title: 'Close'
-  //     }
-  //  ]
-  // })
-  //CSSPlugin.useSVGTransformAttr = true;
-  //TweenMax.to('.VueToNuxtLogo', 5, {rotation: 360});
+  //import VModal from 'vue-js-modal/dist/ssr.index';
 
   export default {
     components: {
-      AppLogo, Tabs, Tab, About, Contact, VModal
+      AppLogo, Tabs, Tab, About, Contact, Modal
     },
     mounted() {
       CSSPlugin.useSVGTransformAttr = true;
-      // TweenMax.to('.links', 5, {rotation: 360});
+
+      // var modalButton = document.querySelector('#animateID');
+      // this.modalWidth = modalButton.offsetWidth;
+      // this.modalHeight = modalButton.offsetHeight;
+      // var xRatio = modalButton.offsetLeft / screen.width;
+      // var yRatio = modalButton.offsetTop / screen.height;
+      // this.xModalStart = xRatio;
+      // this.yModalStart = yRatio;
     },
     data() {
       return {
         xModalStart: 0,
-        yModalStart: 0
+        yModalStart: 0,
+        modalWidth: 0,
+        modalHeight: 0,
+        modalText: 'Open Modal'
       }
     },
     methods: {
-      openModal() {
-        var modalButton = document.querySelector('#animateID');
-        var x = modalButton.offsetLeft;
-        var y = modalButton.offsetTop;
 
-        var sizeXMax = screen.width;
-        var sizeYMax = screen.height;
-
-        var xRatio = x / sizeXMax;
-        var yRatio = y / sizeYMax;
-
-        this.xModalStart = 0.53;
-        this.yModalStart = 0.8;
-        this.$modal.show('foo');
-        TweenMax.to('#modal-button', 1, {scale: 2, yPercent:"-30%"});
-        //TweenMax.to('#dialog', 3, {scale: 2,yPercent:"30%", xPercent:"2%", rotation:3*360, onComplete:closeModal(this)});
-
-
-        
-        // this.$modal.show('dialog', {
-        //   title: 'Alert!',
-        //   text: 'You are too awesome',
-        //   buttons: [
-        //     { 
-        //       title: 'Deal with it',
-        //       handler: () => { alert('Woot!') }
-        //     },
-        //     {
-        //       title: '',       // Button title
-        //       default: true,    // Will be triggered by default if 'Enter' pressed.
-        //       handler: () => {} // Button click handler
-        //     },
-        //     { 
-        //       title: 'Close',
-        //       handler: () => {
-
-        //         // var dialogTween = TweenMax.staggerFrom('#dialog', 2, {opacity: 0, y:1000, rotation: 360});
-        //         //TweenMax.to('#dialog', 2, {y: 200, rotation: 360});
-        //         TweenMax.to('#dialog', 3, {scale: 0,yPercent:"30%", xPercent:"2%", rotation:3*360, onComplete:closeModal(this)});
-        //         function closeModal(modal) {
-        //           //modal.$modal.hide('dialog');
-        //         }
-
-        //         //var tl = new TimelineMax();
-        //         //tl.to('#animateID', 2, {rotation:360}).to("#dialog", 2, {rotation:360});
-
-        //         //this.$modal.hide('dialog');
-        //       }
-        //     },
-        //     { 
-        //       title: 'Spin me',
-        //       handler: () => {
-
-        //         // var dialogTween = TweenMax.staggerFrom('#dialog', 2, {opacity: 0, y:1000, rotation: 360});
-        //         //TweenMax.to('#dialog', 2, {y: 200, rotation: 360});
-        //         // TweenMax.from('#dialog', 1, {scale: 0,yPercent:"30%", xPercent:"2%", rotation:3*360});
-
-        //         //var tl = new TimelineMax();
-        //         //tl.to('#animateID', 2, {rotation:360}).to("#dialog", 2, {rotation:360});
-        //       }
-        //     }
-        //    ]
-        //  });
-
-
-          // TweenMax.from('#dialog', 1, {scale: 0,yPercent:"30%", xPercent:"2%", rotation:3*360});
-        // 
-        },
-
-        beforeOpen (event) {
-          alert('yes');
-          //TweenMax.to('#dialog', {yPercent:"30%", xPercent:"2%", scale: 0});
-        },
-        beforeClose (event) {
-          alert('yes');
-        }
     },
     asyncData ({ req }) {
       return {
