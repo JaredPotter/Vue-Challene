@@ -30,23 +30,10 @@
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
           class="button--grey">GitHub</a>
-        <div>
-
-          <p>Hi from <b>{{ name }}</b>.</p>
-   <!--        <button @click="$modal.show('foo')">
-            Open modal
-          </button>
-          <button id="animateID" @click="openModal">
-            Animate -->
-          </button>
-          <div>
-            <svg>
-              <rect id="svgRectangle" class="animated" x="20" y="60" width="100" height="20" fill="#91e600" data-svg-origin="50 10"></rect>
-            </svg>
-          </div>
-        </div>
       </div>
-          <modal name="foo" :draggable="true" :width="modalWidth" :height="modalHeight" :pivotX="xModalStart" :pivotY="yModalStart">{{ modalText }}</modal>
+      <div>
+        <modal></modal>
+      </div>
     </div>
 
   </section>
@@ -79,20 +66,11 @@
     },
     data() {
       return {
-        xModalStart: 0,
-        yModalStart: 0,
-        modalWidth: 0,
-        modalHeight: 0,
-        modalText: 'Open Modal'
+
       }
     },
     methods: {
 
-    },
-    asyncData ({ req }) {
-      return {
-        name: req ? 'server' : 'client'
-      }
     }
   }
 </script>

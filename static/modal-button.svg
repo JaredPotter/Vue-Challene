@@ -1,0 +1,3 @@
+<svg class="modal-button" viewBox="0 0 300 100" @click="showModal()">
+	<text x="45" y="65" font-family="Verdana" font-size="36">{{ buttonText }}</text>
+</svg>
