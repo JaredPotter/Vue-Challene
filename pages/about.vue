@@ -11,16 +11,6 @@
   </section>
 </template>
 
-<script>
-import Modal from '~/components/Modal.vue'
-
-export default {
-  components: {
-    Modal
-  }
-}
-</script>
-
 <style>
 .container {
   min-height: 100vh;

@@ -2,7 +2,7 @@
 	<div>
 		<ul class="nav nav-tabs">
 		  <li v-for="tab in tabs" class="nav-item" :key="tab.id" :class="{'active': tab.isActive}"> 
-			  <a class="nav-link" @click="selectTab(tab)"> {{ tab.name }} </a>
+			  <a class="nav-link" v-on:click="selectTab(tab)"> {{ tab.name }} </a>
 		  </li>
 		</ul>
 
@@ -27,6 +27,8 @@
 				this.tabs.forEach(tab => {
 					tab.isActive = (tab.name == selectedTab.name);
 				})
+
+				this.$emit("selectTab");
 			}
 		}
 	};

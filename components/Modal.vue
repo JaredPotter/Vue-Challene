@@ -10,10 +10,14 @@
 		<div v-if="displayed">
 			<svg class="modal-content" viewBox="0 0 300 100">
 			 	<text x="280" y="20" font-family="Verdana" font-size="12" cursor="pointer" @click="closeModal()">X</text>
-			 	<text x="120" y="20" font-family="Verdana" font-size="12" cursor="pointer">{{title}}</text>
-			 	<text x="75" y="50" font-family="Verdana" font-size="12" cursor="pointer">{{body}}</text>
+			 	<text x="150" y="20" font-family="Verdana" font-size="12" text-anchor="middle">{{title}}</text>
+			 	<text x="150" y="50" font-family="Verdana" font-size="12" text-anchor="middle">{{body}}</text>
+
+			 	<rect x="100" y="70" width="40" height="20" fill="#0275d8" cursor="pointer" @click="closeModal()"/>
+			 	<text x="100" y="85" fill="white" font-family="Verdana" font-size="12" cursor="pointer" text-anchor="middle" @click="closeModal()">{{modalButtonText}}</text>
+
 			 	<rect x="250" y="70" width="40" height="20" fill="#0275d8" cursor="pointer" @click="closeModal()"/>
-			 	<text x="255" y="85" fill="white" font-family="Verdana" font-size="12" cursor="pointer" @click="closeModal()">{{modalButtonText}}</text>
+			 	<text x="255" y="85" fill="white" font-family="Verdana" font-size="12" cursor="pointer" text-anchor="middle" @click="closeModal()">{{modalButtonText}}</text>
 			</svg>
 		</div>
 	</div>
@@ -27,8 +31,8 @@
 			return {
 				displayed: false,
 				buttonText: 'Open Modal',
-				title: 'Modal Title',
-				body: 'Modal body text goes here.',
+				title: 'Modal title',
+				body: 'This is the modal body.',
 				modalButtonText: 'Close'
 			};
 		},
@@ -41,7 +45,7 @@
 					darkDiv.id = 'dark-div';
 					document.body.appendChild(darkDiv);
 
-					TweenMax.to('.modal-button', 1, {rotation: 360*3, scale: 5, transformOrigin:"50% 50%", y: -420});
+					TweenMax.to('.modal-button', 0.5, {rotation: 360, scale: 5, transformOrigin:"50% 50%", y: -420});
 					
 					this.displayed = true;
 				}
@@ -51,7 +55,7 @@
 					document.body.className = '';		
 					document.getElementById("dark-div").remove();
 
-					TweenMax.to('.modal-content', 1, {rotation: -360*3, scale: 1, transformOrigin:"50% 50%", y: 0});
+					TweenMax.to('.modal-content', 0.5, {rotation: -360, scale: 1, transformOrigin:"50% 50%", y: 0});
 					this.displayed = false;
 				}
 			}
@@ -83,7 +87,7 @@
 	height: 40px;
 	padding: 0;
 	border: 0;
-	opacity: 0.8;
+	opacity: 1;
 	z-index: 1051;
 	display: inline-block;
 	position: fixed;

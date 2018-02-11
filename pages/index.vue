@@ -1,42 +1,39 @@
 <template>
-  <section class="container">
-    <div>
-      <tabs>
-        <tab name="Home" :selected="true">
-        </tab>
-        <tab name="About">
-          <about></about>
-        </tab>
-        <tab name="Contact">
-          <contact></contact>
-        </tab>
-        <tab name="Fun Stuff">
-          <h1>fun stuff tab</h1>
-        </tab>
-      </tabs>
-      <app-logo/>
-      <h1 class="title">
-        vue-challenge
-      </h1>
-      <h2 class="subtitle">
-        Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
+  <div>
+    <img class="batman-logo" src="/batman.png" v-show="batmanDisplay"/>
+    <section class="container">
       <div>
-        <modal></modal>
+        <tabs @selectTab="onClick">
+          <tab name="Home" :selected="true">
+          </tab>
+          <tab name="About">
+            <about></about>
+          </tab>
+          <tab name="Contact">
+            <contact></contact>
+          </tab>
+          <tab name="Fun Stuff">
+            <h1>fun stuff tab</h1>
+          </tab>
+        </tabs>
+        <app-logo/>
+        <h1 class="title">
+          vue-challenge
+        </h1>
+        <h2 class="subtitle">
+          Nuxt.js project
+        </h2>
+        <div>
+          <modal></modal>
+          <button
+            class="body"
+            @click="onClick">
+            To Page 2
+          </button>
+        </div>
       </div>
-    </div>
-
-  </section>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -54,28 +51,41 @@
       AppLogo, Tabs, Tab, About, Contact, Modal
     },
     mounted() {
-      CSSPlugin.useSVGTransformAttr = true;
+      this.$on('selectTab', function(){
+        alert("hey");
 
-      // var modalButton = document.querySelector('#animateID');
-      // this.modalWidth = modalButton.offsetWidth;
-      // this.modalHeight = modalButton.offsetHeight;
-      // var xRatio = modalButton.offsetLeft / screen.width;
-      // var yRatio = modalButton.offsetTop / screen.height;
-      // this.xModalStart = xRatio;
-      // this.yModalStart = yRatio;
+        // onClick(); 
+      });
     },
     data() {
       return {
-
+        batmanDisplay: false
       }
     },
     methods: {
+      onClick:function(){
+        TweenLite.to('.container', 5, {rotation:1080, transformOrigin:"50% 50%"});
+        this.batmanDisplay = true;
+        var tl = new TimelineLite();
+
+        tl.fromTo('.batman-logo', 2.5, {scale:0, transformOrigin:"50% 50% 100px", x:window.innerWidth/2, xPercent:-50, y:window.innerHeight/2, yPercent:-50}, {scale:20, transformOrigin:"50% 50% 100px"})
+          .to('.batman-logo', 2.5, {scale:0, transformOrigin:"50% 50% 100px"}, 2.5)
+          .to('.batman-logo', 0, {x:-window.innerWidth/2, xPercent:-50, y:-window.innerHeight/2, yPercent:-50}, 5)
+          .to('.container', 0, {rotation:-1080, transformOrigin:"50% 50%"})
+          // rotationMultiplier++;
+      }
 
     }
   }
 </script>
 
 <style>
+.batman-logo{
+  z-index:100;
+  width: 50px;
+  float:left;
+}
+
 .v--modal-box {
   /*background: transparent;*/
   opacity: 0.8;
