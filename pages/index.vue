@@ -5,15 +5,18 @@
       <div>
         <tabs @selectTab="onClick">
           <tab name="Home" :selected="true">
+            <h1>Home Page</h1>
           </tab>
           <tab name="About">
-            <about></about>
+            <!-- <about></about> -->
+            <h1>About Page</h1>
           </tab>
           <tab name="Contact">
-            <contact></contact>
+            <!-- <contact></contact> -->
+            <h1>Contact Page</h1>
           </tab>
           <tab name="Fun Stuff">
-            <h1>fun stuff tab</h1>
+            <h1>Fun Stuff Page</h1>
           </tab>
         </tabs>
         <app-logo/>
@@ -64,15 +67,14 @@
     },
     methods: {
       onClick:function(){
-        TweenLite.to('.container', 5, {rotation:1080, transformOrigin:"50% 50%"});
+        TweenLite.to('.container', 2, {rotation:1080, transformOrigin:"50% 50%"});
         this.batmanDisplay = true;
         var tl = new TimelineLite();
 
-        tl.fromTo('.batman-logo', 2.5, {scale:0, transformOrigin:"50% 50% 100px", x:window.innerWidth/2, xPercent:-50, y:window.innerHeight/2, yPercent:-50}, {scale:20, transformOrigin:"50% 50% 100px"})
-          .to('.batman-logo', 2.5, {scale:0, transformOrigin:"50% 50% 100px"}, 2.5)
-          .to('.batman-logo', 0, {x:-window.innerWidth/2, xPercent:-50, y:-window.innerHeight/2, yPercent:-50}, 5)
+        tl.fromTo('.batman-logo', 1, {scale:0, transformOrigin:"50% 50% 100px", x:window.innerWidth/2, xPercent:-50, y:window.innerHeight/2, yPercent:-50}, {scale:50, transformOrigin:"50% 50% 100px"})
+          .to('.batman-logo', 1, {scale:0, transformOrigin:"50% 50% 100px"}, 1)
+          .to('.batman-logo', 0, {x:-window.innerWidth/2, xPercent:-50, y:-window.innerHeight/2, yPercent:-50}, 2)
           .to('.container', 0, {rotation:-1080, transformOrigin:"50% 50%"})
-          // rotationMultiplier++;
       }
 
     }
