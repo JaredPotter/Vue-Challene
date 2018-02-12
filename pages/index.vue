@@ -28,11 +28,6 @@
         </h2>
         <div>
           <modal></modal>
-          <button
-            class="body"
-            @click="onClick">
-            To Page 2
-          </button>
         </div>
       </div>
     </section>
