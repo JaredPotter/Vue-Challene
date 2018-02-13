@@ -13,7 +13,7 @@
 			 	<text x="150" y="20" font-family="Verdana" font-size="12" text-anchor="middle">{{title}}</text>
 			 	<text x="150" y="50" font-family="Verdana" font-size="12" text-anchor="middle">{{body}}</text>
 
-			 	<rect id="modal-rect" x="100" y="70" width="40" height="20" fill="#0275d8" cursor="pointer" @click="closeModal()"/>
+			 	<rect id="modal-rect" x="100" y="70" width="40" height="20" stroke="orange" stroke-width="6" fill="#0275d8" cursor="pointer" @click="closeModal()"/>
 			 	<text x="120" y="85" fill="white" font-family="Verdana" font-size="12" cursor="pointer" text-anchor="middle" @click="closeModal()">{{modalButtonText}}</text>
 			</svg>
 		</div>
@@ -22,6 +22,7 @@
 
 <script>
 	import { TweenMax } from 'gsap';
+	// import { DrawSVGPlugin } from 'greensock-js-business-green';
 
 	export default {
 		data() {
@@ -41,33 +42,35 @@
 					darkDiv.className = 'modal-backdrop in';
 					darkDiv.id = 'dark-div';
 					document.body.appendChild(darkDiv);
-var tl = new TimelineLite();
+
+					var tl = new TimelineLite();
 					// TweenMax.set('#modal-rect', {stroke: "red", strokeWidth:5});
 
-					
+
 					tl.to('.modal-button', 0.5, {rotation: 360, scale: 5, transformOrigin:"50% 50%", y: -420})
-					// .to('text', 2.5, {drawSVG: 0});
+						.staggerFromTo('rect', 1, {drawSVG:"100%"}, {drawSVG:"50% 50%"}, 0.1)
 
-					// tl.timeScale(2);
+					// .from('rect', 2.5, {drawSVG: 0});
 
+					tl.timeScale(2);
 
 					// var tl2 = new TimelineMax();
 					// tl2.from('#rect', 2.5, {drawSVG: "50% 50%"});
 					// TweenMax.from('#rect', 2.5, {drawSVG: "50% 50%"});
-
 					// TweenMax.to('.modal-button', 0.5, {rotation: 360, scale: 5, transformOrigin:"50% 50%", y: -420, drawSVG: 0});
-					
+
+
 					this.displayed = true;
 				}
 			},
 			closeModal() {
 				if(this.displayed == true) {
-					document.body.className = '';		
+					document.body.className = '';
 					document.getElementById("dark-div").remove();
 					var tl = new TimelineLite();
 					// TweenMax.set('#modal-rect', {stroke: "red", strokeWidth:5});
 
-					
+
 					tl.to('.modal-content', 0.5, {rotation: -360, scale: 1, transformOrigin:"50% 50%", y: 0})
 					.to('text', 2.5, {drawSVG: "100%"}, 1.5);
 

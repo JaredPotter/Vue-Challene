@@ -1,14 +1,22 @@
 <template>
-  <div class="VueToNuxtLogo">
+  <div class="mirror-image">
     <div class="Triangle Triangle--two"/>
     <div class="Triangle Triangle--one"/>
     <div class="Triangle Triangle--three"/>
     <div class="Triangle Triangle--four"/>
+    <div class='reflection'>
+      <span>
+        <div class="Triangle Triangle--two"/>
+        <div class="Triangle Triangle--one"/>
+        <div class="Triangle Triangle--three"/>
+        <div class="Triangle Triangle--four"/>
+      </span>
+    </div>
   </div>
 </template>
 
 <style>
-.VueToNuxtLogo {
+.mirror-image {
   display: inline-block;
   animation: turn 2s linear forwards 1s;
   transform: rotateX(180deg);
@@ -18,6 +26,24 @@
   width: 245px;
 }
 
+.mirror-image > .reflection {
+    position: relative;
+}
+
+.mirror-image > .reflection > span {
+    display: block;
+    transform: rotateX(180deg);
+}
+.mirror-image > .reflection:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: transparent;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00ffffff, endColorstr=#ffffffff);
+}
 .Triangle {
   position: absolute;
   top: 0;
@@ -59,7 +85,7 @@
   border-bottom: 60px solid #fff;
 }
 
-@keyframes turn {
+/* @keyframes turn {
   100% {
     transform: rotateX(0deg);
   }
@@ -75,5 +101,5 @@
   100% {
     left: 70px;
   }
-}
+} */
 </style>

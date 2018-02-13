@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="body">
     <img class="batman-logo" src="/batman.png" v-show="batmanDisplay"/>
     <section class="container">
       <div>
@@ -52,7 +52,7 @@
       this.$on('selectTab', function(){
         alert("hey");
 
-        // onClick(); 
+        // onClick();
       });
     },
     data() {
@@ -77,6 +77,10 @@
 </script>
 
 <style>
+.body {
+  background-color: #efefef;
+}
+
 .batman-logo{
   z-index:100;
   width: 50px;
