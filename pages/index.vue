@@ -41,6 +41,8 @@
   import Tab from '~/components/Tab.vue';
   import About from '~/pages/about.vue';
   import Contact from '~/pages/contact.vue';
+
+  //import TweenMax from 'gsap'
   // import {  TimelineMax } from 'gsap';
   //import VModal from 'vue-js-modal/dist/ssr.index';
 
