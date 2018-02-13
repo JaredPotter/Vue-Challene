@@ -1,12 +1,13 @@
-var path = require('path');
-var PrerenderSpaPlugin = require('prerender-spa-plugin');
-
+// var path = require('path');
+// var PrerenderSpaPlugin = require('prerender-spa-plugin');
+// var config = require('./nuxt.config.js');
+require("gsap");
 module.exports = {
   // mode: 'spa',
 
-  plugins: [
-  '~/plugins/vue-js-modal'
-  ],
+  // plugins: [
+  // '~/plugins/vue-js-modal'
+  // ],
 
   head: {
     title: 'vue-challenge',
@@ -23,7 +24,8 @@ module.exports = {
     script: [
       {type: 'text/javascript', src:"http://code.jquery.com/jquery-3.3.1.min.js"},
       {type: 'text/javascript', src:"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"},
-      {type: 'text/javascript', src:"https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/plugins/CSSPlugin.min.js"}
+      {type: 'text/javascript', src:"https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/plugins/CSSPlugin.min.js"},
+      {type: 'text/javascript', src:"https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenLite.min.js"}
     ]
   },
   /*
@@ -33,7 +35,26 @@ module.exports = {
   /*
   ** Build configuration
   */
-  build: {
+  // build: {
+
+  //     // extend (config, {isClient, dev}) {
+  //     //   if (isClient) {
+
+  //     //     config.entry['app'] = '~/node_modules/gsap/src/uncompressed/plugins/DrawSVGPlugin';
+  //     //   }
+
+  //   },
+    plugins: ["~plugins/DrawSVGPlugin.js"],
+    // extend(config, {isDev, isClient}) {
+    //   if (isClient) {
+    //     config.entry.app = ["~/plugins/DrawSVGPlugin.min.js", config.entry.app];
+    //   }
+    // },
+    // extend (config, ctx) {
+    //   if (ctx.isClient) {
+    //     config.entry.app = ['gsap','~plugins/DrawSVGPlugin', config.entry.app];
+    //   }
+    // }
     /*
     ** Run ESLint on save
     */
@@ -54,5 +75,5 @@ module.exports = {
     //     })
     //   }
     // }
-  }
-}
+  
+};
