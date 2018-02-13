@@ -1,7 +1,7 @@
 // var path = require('path');
 // var PrerenderSpaPlugin = require('prerender-spa-plugin');
 // var config = require('./nuxt.config.js');
-//require("gsap");
+require("gsap");
 module.exports = {
   // mode: 'spa',
 
@@ -44,7 +44,7 @@ module.exports = {
   //     //   }
 
   //   },
-    //plugins: ["~plugins/DrawSVGPlugin.js"],
+    plugins: ["~plugins/DrawSVGPlugin.js"],
     // extend(config, {isDev, isClient}) {
     //   if (isClient) {
     //     config.entry.app = ["~/plugins/DrawSVGPlugin.min.js", config.entry.app];

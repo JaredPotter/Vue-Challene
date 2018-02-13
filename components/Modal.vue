@@ -1,29 +1,5 @@
 <template>
 	<div>
-		
-
-
-
-
-	    <div id="box">
-	      <div class="boxSmall"></div>
-	      <div class="boxSmall boxTiny"></div>
-	    </div>
-
-
-	    <svg x="0px" y="0px" width="570px" height="150px" viewBox="0 0 570 150" xml:space="preserve">
-	      <circle class="circle-1" fill="none" cx="71.5" cy="77.5" r="51.5" stroke="#88CE02" stroke-width="4"/>
-	    </svg>
-
-
-	    <button v-on:click="anim_svg">Animate</button>
-
-
-
-
-
-
-
 		<!-- Button trigger modal -->
 		<!-- <button id="modal-button" type="button"> -->
 		<div v-if="!displayed">
@@ -51,14 +27,11 @@
 </template>
 
 <script>
-
-	import TweenMax from 'gsap'
-	import DrawSVGPlugin from "gsap/DrawSVGPlugin"
 	// import { TweenLite , drawSVGPlugin } from 'gsap';
 
 	// import { TweenLite , drawSVGPlugin } from 'gsap/plugins/DrawSVGPlugin';
 	// import TweenLite from 'gsap/TweenLite';
-	//import { TweenLite, DrawSVGPlugin } from "gsap"
+	import { TweenLite, DrawSVGPlugin } from "gsap"
 	// import DrawSVGPlugin from 'gsap/DrawSVGPlugin';
 // var DrawSVGPlugin = require("gsap/src/minified/plugins/DrawSVGPlugin");
 	// import DrawSVGPlugin from 'gsap/src/minified/plugins/DrawSVGPlugin.min.js';
@@ -86,24 +59,12 @@
 		},
 		mounted (){
 			// TweenMax.set('#path', {drawSVG: "40% 60%"})
-			
-
-			//TweenMax.to('#path', 2, {drawSVG: "40% 60%", transformOrigin:"50% 50%", rotation: 360});
-
-
+			TweenMax.to('#path', 2, {drawSVG: "40% 60%", transformOrigin:"50% 50%", rotation: 360});
 			// TweenLite.to('#path', 2, {drawSVG: true});
-			//var d = new DrawSVGPlugin();
+			var d = new DrawSVGPlugin();
 			// TweenLite.set('#path', {drawSVG: "40% 60%"});
 		},
 		methods: {
-			anim_svg() {
-				 
-
-				var box = document.getElementById("box");
-				TweenLite.to(box, 0.7, {left: 0, x: 0});
-
-			    TweenLite.fromTo(".circle-1", 1, {drawSVG:"0 5%"}, {drawSVG:"9% 100%"});
-			},
 			showModal() {
 				if(this.displayed == false) {
 					document.body.className += 'modal-open';
@@ -200,44 +161,6 @@
     border: 1px solid #3b8070;
     color: #3b8070;
     stroke-width: 1px;
-}
-
-
-
-
-
-
-
-
-#box {
-  background-color: #88ce02;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100px;
-  height: 100px;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-}
- 
-.boxSmall {
-  position: absolute;
-  background-color: #70a40b;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 25px;
-  height: 75px;
-  z-index: 2;
-}
- 
-.boxTiny {
-  background-color: #577a14;
-  height: 50px;
-  bottom: 0;
-  right: 0;
-  left: auto;
-  z-index: 3;
 }
 
 </style>
