@@ -1,5 +1,5 @@
 <template>
-  <div class="body">
+  <div>
     <img class="batman-logo" src="/batman.png" v-show="batmanDisplay"/>
     <section class="container">
       <div>
@@ -77,14 +77,12 @@
 </script>
 
 <style>
-.body {
-  background-color: #efefef;
-}
-
-.batman-logo{
-  z-index:100;
+.batman-logo {
+  z-index: 5;
   width: 50px;
   float:left;
+  opacity: 1;
+  position: relative;
 }
 
 .v--modal-box {
@@ -98,6 +96,12 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  z-index: 0;
+  position: relative;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Archimedean_spiral_8revolution.svg/1058px-Archimedean_spiral_8revolution.svg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .title {

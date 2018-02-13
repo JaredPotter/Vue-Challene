@@ -1,5 +1,5 @@
 <template>
-	<div v-show="isActive">
+	<div class="tabz" v-show="isActive">
 		<slot></slot>
 	</div>
 </template>
@@ -25,3 +25,10 @@
 		}
 	};
 </script>
+
+<style>
+	.tabz{
+		position: fixed;
+		z-index: -1;
+	}
+</style>

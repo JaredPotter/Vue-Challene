@@ -93,7 +93,7 @@
 	padding: 0;
 	border: 0;
 	opacity: 0.8;
-	z-index: 1051;
+	z-index: 5;
 	position: fixed;
     cursor: default;
     border-radius: 4px;
@@ -117,7 +117,7 @@
 	padding: 0;
 	border: 0;
 	opacity: 1;
-	z-index: 1051;
+	z-index: 5;
 	display: inline-block;
 	position: fixed;
     cursor: pointer;
@@ -127,4 +127,8 @@
     stroke-width: 1px;
 }
 
+.modal-backdrop.in{
+	position: fixed;
+	z-index: -1;
+}
 </style>
