@@ -59,9 +59,9 @@
 		},
 		mounted (){
 			// TweenMax.set('#path', {drawSVG: "40% 60%"})
-			TweenMax.to('#path', 2, {drawSVG: "40% 60%", transformOrigin:"50% 50%", rotation: 360});
+			// TweenMax.to('#path', 2, {drawSVG: "40% 60%", transformOrigin:"50% 50%", rotation: 360});
 			// TweenLite.to('#path', 2, {drawSVG: true});
-			var d = new DrawSVGPlugin();
+			// var d = new DrawSVGPlugin();
 			// TweenLite.set('#path', {drawSVG: "40% 60%"});
 		},
 		methods: {
