@@ -44,7 +44,7 @@ module.exports = {
   //     //   }
 
   //   },
-    plugins: ["~plugins/DrawSVGPlugin.js"],
+    // plugins: ["~plugins/DrawSVGPlugin.js"],
     // extend(config, {isDev, isClient}) {
     //   if (isClient) {
     //     config.entry.app = ["~/plugins/DrawSVGPlugin.min.js", config.entry.app];
