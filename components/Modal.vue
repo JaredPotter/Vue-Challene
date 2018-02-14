@@ -21,7 +21,7 @@
 <script>
 
 	import TweenMax from 'gsap'
-	// import DrawSVGPlugin from "gsap/DrawSVGPlugin"
+	import DrawSVGPlugin from "gsap/DrawSVGPlugin"
 
 	export default {
 		data() {
@@ -43,8 +43,9 @@
 					document.body.appendChild(darkDiv);
 
 					var tl = new TimelineLite();
-					tl.to('.modal-button', 0.75, {rotation: 360, scale: 5, transformOrigin:"50% 50%", y: -420});
-
+					tl.to('.modal-button', 1.25, {rotation: 360, scale: 5, transformOrigin:"50% 50%", y: -420})
+					  .to('rect', 0.5, {drawSVG: "100% 100%"}, 1.25);
+					
 					this.displayed = true;
 				}
 			},
@@ -54,7 +55,9 @@
 					document.getElementById("dark-div").remove();
 
 					var tl = new TimelineLite();
-					tl.to('.modal-content', 0.75, {rotation: -360, scale: 1, transformOrigin:"50% 50%", y: 0});
+					tl.to('rect', 0.5, {drawSVG: "0% 0%"})
+					  .to('.modal-content', 1.25, {rotation: -360, scale: 1, transformOrigin:"50% 50%", y: 0});
+					;
 
 					this.displayed = false;
 				}
