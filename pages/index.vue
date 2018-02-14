@@ -1,5 +1,5 @@
 <template>
-  <div class="body">
+  <div>
     <img class="batman-logo" src="/batman.png" v-show="batmanDisplay"/>
     <section class="container">
       <div>
@@ -7,16 +7,14 @@
           <tab name="Home" :selected="true">
             <h1>Home Page</h1>
           </tab>
-          <tab name="About">
-            <!-- <about></about> -->
-            <h1>About Page</h1>
+          <tab name="Team">
+            <h1>Team Page</h1>
           </tab>
-          <tab name="Contact">
-            <!-- <contact></contact> -->
-            <h1>Contact Page</h1>
+          <tab name="Elizabeth">
+            <h1>Elizabeth's Page</h1>
           </tab>
-          <tab name="Fun Stuff">
-            <h1>Fun Stuff Page</h1>
+          <tab name="Jared">
+            <h1>Jared's Page</h1>
           </tab>
         </tabs>
         <app-logo/>
@@ -71,14 +69,12 @@
 </script>
 
 <style>
-.body {
-  background-color: #efefef;
-}
-
-.batman-logo{
-  z-index:100;
+.batman-logo {
+  z-index: 5;
   width: 50px;
   float:left;
+  opacity: 1;
+  position: relative;
 }
 
 .v--modal-box {
@@ -92,8 +88,15 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-}
+  z-index: 0;
+  position: relative;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Archimedean_spiral_8revolution.svg/1058px-Archimedean_spiral_8revolution.svg.png");
+  /* background-image: url("http://python3.codes/wp-content/uploads/2015/04/SpiralSquare.png"); */
 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 .title {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
   display: block;
