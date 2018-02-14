@@ -41,7 +41,7 @@
   import Tab from '~/components/Tab.vue';
   import About from '~/pages/about.vue';
   import Contact from '~/pages/contact.vue';
-  import $ from 'jquery';
+  // import $ from 'jquery';
 
   //import TweenMax from 'gsap'
   // import {  TimelineMax } from 'gsap';
