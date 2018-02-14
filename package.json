@@ -14,15 +14,18 @@
     "dev": "nuxt",
     "build": "nuxt build --spa",
     "start": "nuxt start --spa",
-    "generate": "nuxt generate --spa",
+    "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "bootstrap": "^4.0.0",
     "gsap": "^1.20.3",
+    "jquery": "^3.3.1",
     "nuxt": "^1.0.0",
     "nuxt-cli": "0.0.1",
     "path": "^0.12.7",
+    "popper.js": "^1.12.9",
     "prerender-spa-plugin": "^2.1.0",
     "webpack": "^3.11.0"
   },
