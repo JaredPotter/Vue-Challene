@@ -75,16 +75,13 @@
     cursor: default;
     border-radius: 4px;
     border: 1px solid #3b8070;
+    display: inline-block;
     color: #3b8070;
     stroke-width: 1px;
 }
 
 #dark-div {
 	opacity: 0.7;
-}
-
-.display {
-	display: block;
 }
 
 .modal-button {
