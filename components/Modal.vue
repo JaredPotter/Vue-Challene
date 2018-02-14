@@ -13,7 +13,6 @@
 
 			 	<rect id="modal-rect" x="260" y="70" width="40" height="20" fill="#0275d8" cursor="pointer" @click="closeModal()"/>
 			 	<text x="280" y="85" fill="white" font-family="Verdana" font-size="12" cursor="pointer" text-anchor="middle" @click="closeModal()">{{modalButtonText}}</text>
-
 			</svg>
 		</div>
 	</div>
