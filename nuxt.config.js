@@ -19,8 +19,7 @@ module.exports = {
   css: ['bootstrap/dist/css/bootstrap.css'],
   // include bootstrap js on startup
   plugins: [
-    '~plugins/bootstrap.js',
-    // '~plugins/DrawSVGPlugin.js'
+    '~plugins/bootstrap.js'
     // new PrerenderSpaPlugin(
     //     path.join(__dirname, '../dist'),
     //     [ '/', '/about' ]

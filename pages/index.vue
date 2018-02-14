@@ -41,22 +41,13 @@
   import Tab from '~/components/Tab.vue';
   import About from '~/pages/about.vue';
   import Contact from '~/pages/contact.vue';
-  // import $ from 'jquery';
-
-  //import TweenMax from 'gsap'
-  // import {  TimelineMax } from 'gsap';
-  //import VModal from 'vue-js-modal/dist/ssr.index';
 
   export default {
     components: {
       AppLogo, Tabs, Tab, About, Contact, Modal
     },
     mounted() {
-      this.$on('selectTab', function(){
-        alert("hey");
 
-        // onClick();
-      });
     },
     data() {
       return {

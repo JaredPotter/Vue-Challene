@@ -28,7 +28,7 @@
 <script>
 
 	import TweenMax from 'gsap'
-	// import DrawSVGPlugin from "gsap/DrawSVGPlugin"
+	import DrawSVGPlugin from "DrawSVGPlugin"
 
 	export default {
 		data() {
