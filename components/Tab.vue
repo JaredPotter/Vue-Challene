@@ -25,10 +25,3 @@
 		}
 	};
 </script>
-
-<style>
-	.tabz{
-		position: fixed;
-		z-index: -1;
-	}
-</style>

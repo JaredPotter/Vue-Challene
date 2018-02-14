@@ -99,11 +99,12 @@
   z-index: 0;
   position: relative;
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Archimedean_spiral_8revolution.svg/1058px-Archimedean_spiral_8revolution.svg.png");
+  /* background-image: url("http://python3.codes/wp-content/uploads/2015/04/SpiralSquare.png"); */
+
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-
 .title {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
   display: block;
