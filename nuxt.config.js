@@ -6,7 +6,7 @@ var webpack = require('webpack');
 
 module.exports = {
   build: {
-    vendor: ['jquery', 'bootstrap'],
+    vendor: ['jquery', 'bootstrap', 'gsap'],
       plugins: [
       // set shortcuts as global for bootstrap
       new webpack.ProvidePlugin({
