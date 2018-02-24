@@ -2,19 +2,18 @@
 	<div>
 		<div v-if="!displayed">
 			<svg class="modal-button" viewBox="0 0 300 100" @click="showModal()">
-				<text class="bob" x="45" y="65" font-family="Verdana" font-size="36" stroke="#88CE02" stroke-width="0.01">{{ buttonText }}</text>
+				<text x="45" y="65" font-family="Verdana" font-size="36" stroke="black" stroke-width="0.01">{{ buttonText }}</text>
 			</svg>
 		</div>
 		<div v-if="displayed">
 			<svg class="modal-content" viewBox="0 0 300 100">
-			 	<text class="circle-1" x="280" y="20" stroke="#88CE02" stroke-width="0.1" font-family="Verdana" cursor="pointer" @click="closeModal()">X</text>
-			 	<text class="circle-1" x="150" y="20" stroke="#88CE02" stroke-width="0.1" font-family="Verdana" text-anchor="middle">{{title}}</text>
-			 	<text class="circle-1" stroke="#88CE02" stroke-width="0.1" x="150" y="50" font-family="Verdana" text-anchor="middle">{{body}}</text>
-			 	<rect class="circle-1" x="250" y="70" width="40" height="20" fill="#0275d8" cursor="pointer" @click="closeModal()"/>
-			 	<text class="circle-1" x="270" y="85" font-size="12" fill="white" font-family="Verdana" cursor="pointer" text-anchor="middle" @click="closeModal()">{{modalButtonText}}</text>
+			 	<text class="drawMe" x="280" y="20" stroke="black" stroke-width="0.1" font-family="Verdana" cursor="pointer" @click="closeModal()">X</text>
+			 	<text class="drawMe" x="150" y="20" stroke="black" stroke-width="0.1" font-family="Verdana" text-anchor="middle">{{title}}</text>
+			 	<text class="drawMe" stroke="black" stroke-width="0.1" x="150" y="50" font-family="Verdana" text-anchor="middle">{{body}}</text>
+			 	<rect class="drawMe" x="250" y="70" width="40" height="20" fill="#0275d8" cursor="pointer" @click="closeModal()"/>
+			 	<text class="drawMe" x="270" y="85" font-size="12" fill="white" font-family="Verdana" cursor="pointer" text-anchor="middle" @click="closeModal()">{{modalButtonText}}</text>
 			</svg>
 		</div>
-    	<button v-on:click="animate">Animate</button>
 	</div>
 </template>
 
@@ -36,10 +35,6 @@
 		mounted () {
 		},
 		methods: {
-			animate() {
-			    var tl = new TimelineLite();
-				tl.staggerFrom(".circle-1", 0.5, {scale:1.5, opacity:0}, 0.2);
-			},
 			showModal() {
 				if(this.displayed == false) {
 					document.body.className += 'modal-open';
@@ -50,8 +45,10 @@
 					this.displayed = true;
 
 					var tl = new TimelineLite();
-					tl.to('.modal-button', 0.75, {rotation: 360, scale: 5, transformOrigin:"50% 50%", y: -420})
-					.staggerFrom('.circle-1', 0.5, {drawSVG: 0, scale:1.5, opacity:0}, 0.75);
+					tl.to('.modal-button', 0.75, {rotation: 360, scale: 5, transformOrigin:"50% 50%", y: -420, onComplete:function() {
+					    var tl = new TimelineLite();
+					    tl.fromTo(".drawMe", 0.75, {rotation:360, drawSVG:"100%", opacity: 0, stroke:"white", transformOrigin:"50% 50%"}, {opacity: 1});
+					}});
 				}
 			},
 			closeModal() {
@@ -61,14 +58,12 @@
 					var shapes = $("close-x, title-text, body-text, close-button, close-x");
 
 					var tl = new TimelineLite();
-					tl.staggerTo(".circle-1", 0.5, {scale:1.5, opacity:0})
+					tl.staggerTo(".drawMe", 0.5, {scale:1.5, opacity:0})
 					.to('.modal-content', 1.25, {rotation: -360, scale: 1, transformOrigin:"50% 50%", y: 0}, 0.5);
 					
-
 					this.displayed = false;
 
-					// var tl = new TimelineLite();
-					tl.staggerFrom(".circle-1", 0.5, {scale:1.5, opacity:1});
+					tl.staggerFrom(".drawMe", 0.5, {scale:1.5, opacity:1}, 1);
 				}
 			}
 		}
@@ -81,7 +76,7 @@
 	height: 40px;
 	padding: 0;
 	border: 0;
-	/*opacity: 0.8;*/
+	opacity: 0.8;
 	z-index: 5;
 	position: fixed;
     cursor: default;
@@ -91,9 +86,8 @@
     stroke-width: 1px;
 }
 
-.svg-text {
-/*	stroke: black;*/
-	stroke-width: 1px;
+.drawMe {
+	opacity: 0;
 }
 
 #dark-div {
