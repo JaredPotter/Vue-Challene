@@ -47,7 +47,7 @@
 					var tl = new TimelineLite();
 					tl.to('.modal-button', 0.75, {rotation: 360, scale: 5, transformOrigin:"50% 50%", y: -420, onComplete:function() {
 					    var tl = new TimelineLite();
-					    tl.fromTo(".drawMe", 0.75, {rotation:360, drawSVG:"100%", opacity: 0, stroke:"white", transformOrigin:"50% 50%"}, {opacity: 1});
+					    tl.fromTo(".drawMe", 0.75, {rotation:360, drawSVG:0, opacity: 0, stroke:"black", transformOrigin:"50% 50%"}, {opacity: 1});
 					}});
 				}
 			},
@@ -55,8 +55,8 @@
 				if(this.displayed == true) {
 					document.body.className = '';
 					document.getElementById("dark-div").remove();
-					var shapes = $("close-x, title-text, body-text, close-button, close-x");
 
+					var elements = document.querySelectorAll('.close-x, .title-text, .body-text, .close-button, .close-x');
 					var tl = new TimelineLite();
 					tl.staggerTo(".drawMe", 0.5, {scale:1.5, opacity:0})
 					.to('.modal-content', 1.25, {rotation: -360, scale: 1, transformOrigin:"50% 50%", y: 0}, 0.5);
@@ -114,5 +114,15 @@
 	position: fixed;
 	z-index: -1;
 }
+
+/*.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000;
+}*/
 
 </style>

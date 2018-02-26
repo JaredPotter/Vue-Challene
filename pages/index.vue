@@ -123,4 +123,43 @@
 .links {
   padding-top: 15px;
 }
+
+/*.nav-tabs .nav-links {
+    border: 1px solid transparent;
+    border-top-left-radius: 4px;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: 4px;
+    border-top-right-radius: .25rem;
+}
+
+.nav-link {
+    display: block;
+    padding: 8px 16px;
+    padding: .5rem 1rem;
+}
+
+.nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.nav-tabs .nav-item {
+    margin-bottom: -1px;
+}
+
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}*/
 </style>
