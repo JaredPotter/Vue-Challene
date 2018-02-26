@@ -16,14 +16,17 @@
               <modal></modal>
             </div>
           </tab>
-          <tab name="Team">
-            <h1>Team Page</h1>
-          </tab>
           <tab name="Elizabeth">
-            <h1>Elizabeth's Page</h1>
             <Profile
               name="Elizabeth Nicholson"
               profilePicture="/liz.jpg"
+              :images="[
+                {url: '/liz2.jpg', alt: 'pic2', caption: 'Apple picking with my significant other.'},
+                {url: '/liz3.jpg', alt: 'pic3', caption: 'The Oculus under the Freedom Tower at sunset.'},
+                {url: '/liz4.jpg', alt: 'pic4', caption: `Maybe she's born with it..`}
+              ]"
+              bio="Hey my name is Elizabeth. I currently work at a real estate company called The Corcoran Group, as a Frontend Developer intern. I enjoy learning about new technology and programming languages. In my spare time I’m a photographer who loves taking pictures of cool looking buildings and animals."
+              resume="https://drive.google.com/open?id=1EvwyjokpBeU9KTwJEd4oBqTTXp3B40ls"
             />
           </tab>
           <tab name="Jared">
@@ -34,7 +37,9 @@
                 {url: '/jared1.jpg', alt: 'pic1', caption: 'Horseshoe Bend, AZ - my favorite place.'},
                 {url: '/jared2.jpg', alt: 'pic2', caption: 'Summit of Mount Timpanogos.'},
                 {url: '/jared3.jpg', alt: 'pic3', caption: 'Hiking with my brother Tyson in the foothills behind the Utah State Capital.'}]"
-              bio="Hey there. My name is Jared Potter. I work as a full time software engineer at a local company called Utah Health Information Network (UHIN). Outside of work I enjoy the personal finanice, cryptocurrencies, and Utah's epic outdoors - hiking with my brother, learning to ski, and going to the park with my significant other Amber, and her two dogs, Gus and Lugar."/>
+              bio="Hey there. My name is Jared Potter. I work as a full time software engineer at a local company called Utah Health Information Network (UHIN). Outside of work I enjoy the personal finanice, cryptocurrencies, and Utah's epic outdoors - hiking with my brother, learning to ski, and going to the park with my significant other Amber, and her two dogs, Gus and Lugar."
+              resume="https://drive.google.com/file/d/1Ocf4zQNp6NOKT2L2_nAnTrCZsJZ_EdhS/view"
+            />
           </tab>
         </tabs>
       </div>
