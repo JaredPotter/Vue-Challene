@@ -11,7 +11,7 @@
 			 	<text class="drawMe" x="150" y="20" stroke="black" stroke-width="0.1" font-family="Verdana" text-anchor="middle">{{title}}</text>
 			 	<text class="drawMe" stroke="black" stroke-width="0.1" x="150" y="50" font-family="Verdana" text-anchor="middle">{{body}}</text>
 			 	<rect class="drawMe" x="250" y="70" width="40" height="20" fill="#0275d8" cursor="pointer" @click="closeModal()"/>
-			 	<text class="drawMe" x="270" y="85" font-size="12" fill="white" font-family="Verdana" cursor="pointer" text-anchor="middle" @click="closeModal()">{{modalButtonText}}</text>
+			 	<text class="drawMe" x="270" y="85" font-size="12" fill="white" font-family="Verdana" cursor="pointer" text-anchor="middle" @click="closeModal()" stroke-width="0.1">{{modalButtonText}}</text>
 			</svg>
 		</div>
 	</div>
@@ -47,7 +47,7 @@
 					var tl = new TimelineLite();
 					tl.to('.modal-button', 0.75, {rotation: 360, scale: 5, transformOrigin:"50% 50%", y: -420, onComplete:function() {
 					    var tl = new TimelineLite();
-					    tl.fromTo(".drawMe", 0.75, {rotation:360, drawSVG:0, opacity: 0, stroke:"black", transformOrigin:"50% 50%"}, {opacity: 1});
+					    tl.fromTo(".drawMe", 0.75, {rotation:360, drawSVG:0, opacity: 0, stroke:"white", transformOrigin:"50% 50%"}, {opacity: 1});
 					}});
 				}
 			},
