@@ -21,15 +21,19 @@
           </tab>
           <tab name="Elizabeth">
             <h1>Elizabeth's Page</h1>
+            <Profile
+              name="Elizabeth Nicholson"
+              profilePicture="/liz.jpg"
+            />
           </tab>
           <tab name="Jared">
-            <Profile 
-              name="Jared Potter" 
+            <Profile
+              name="Jared Potter"
               profilePicture="/jared4.jpg"
               :images="[
-                {url: '/jared1.jpg', alt: 'pic1', caption: 'Horseshoe Bend, AZ - my favorite place.'}, 
-                {url: '/jared2.jpg', alt: 'pic2', caption: 'Summit of Mount Timpanogos.'}, 
-                {url: '/jared3.jpg', alt: 'pic3', caption: 'Hiking with my brother Tyson in the foothills behind the Utah State Capital.'}]" 
+                {url: '/jared1.jpg', alt: 'pic1', caption: 'Horseshoe Bend, AZ - my favorite place.'},
+                {url: '/jared2.jpg', alt: 'pic2', caption: 'Summit of Mount Timpanogos.'},
+                {url: '/jared3.jpg', alt: 'pic3', caption: 'Hiking with my brother Tyson in the foothills behind the Utah State Capital.'}]"
               bio="Hey there. My name is Jared Potter. I work as a full time software engineer at a local company called Utah Health Information Network (UHIN). Outside of work I enjoy the personal finanice, cryptocurrencies, and Utah's epic outdoors - hiking with my brother, learning to ski, and going to the park with my significant other Amber, and her two dogs, Gus and Lugar."/>
           </tab>
         </tabs>

@@ -28,7 +28,7 @@
 				displayed: false,
 				buttonText: 'Open Modal',
 				title: 'Modal title',
-				body: 'This is the modal body.',
+				body: 'This is a better modal body.',
 				modalButtonText: 'Close'
 			};
 		},
