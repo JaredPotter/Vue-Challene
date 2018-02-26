@@ -1,7 +1,7 @@
 <template>
-	<div>
+	<div class="the_tabs">
 		<ul class="nav nav-tabs">
-		  <li v-for="tab in tabs" class="nav-item" :key="tab.id" :class="{'active': tab.isActive}"> 
+		  <li v-for="tab in tabs" class="nav-item" :key="tab.id" :class="{'active': tab.isActive}">
 			  <a class="nav-link" v-on:click="selectTab(tab)"> {{ tab.name }} </a>
 		  </li>
 		</ul>
@@ -33,3 +33,8 @@
 		}
 	};
 </script>
+
+<style>
+.the_tabs{
+}
+</style>
