@@ -1,7 +1,7 @@
 <template>
   <div>
     <img class="batman-logo" src="/batman.png" v-show="batmanDisplay"/>
-    <section class="container">
+    <section class="container background">
       <div>
         <tabs @selectTab="onClick">
           <tab name="Home" :selected="true">
@@ -106,12 +106,28 @@
   text-align: center;
   z-index: 0;
   position: relative;
-/*  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Archimedean_spiral_8revolution.svg/1058px-Archimedean_spiral_8revolution.svg.png");*/
-
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
+
+.background {
+   position: relative;
+}
+.background::after {
+    content : "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Archimedean_spiral_8revolution.svg/1058px-Archimedean_spiral_8revolution.svg.png"); 
+    width: 100%;
+    height: 100%;
+    opacity : 0.2;
+    z-index: -1;
+    background-repeat: no-repeat;
+}
+
 .title {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
   display: block;
@@ -132,4 +148,43 @@
 .links {
   padding-top: 15px;
 }
+
+/*.nav-tabs .nav-links {
+    border: 1px solid transparent;
+    border-top-left-radius: 4px;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: 4px;
+    border-top-right-radius: .25rem;
+}
+
+.nav-link {
+    display: block;
+    padding: 8px 16px;
+    padding: .5rem 1rem;
+}
+
+.nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.nav-tabs .nav-item {
+    margin-bottom: -1px;
+}
+
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}*/
 </style>
